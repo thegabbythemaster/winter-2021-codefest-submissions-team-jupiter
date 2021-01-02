@@ -1,0 +1,62 @@
+/*for the top border to get rid of white space on top*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 22px;
+}
+body{
+    font-family: Helvetica;
+    font-size: 22px;
+    background-color: #fcf8ec;
+}
+a{
+    font-family: Arial;
+    color: #fcf8ec;
+    background: #19456b;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+#HomeButton a{
+    font-size: 20px;
+}
+
+#UserButton a{
+    font-size: 20px;
+    text-align: right;
+}
+nav{
+    text-align: right;
+    flex-grow: 1;
+    display: block;
+}
+.SuggestionButton a{
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 250px;
+    margin-left: 100px;
+    text-decoration: none;
+    padding: 15px 10px;
+}
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    height: 69px;
+    background-color: #d0e8f2;
+    align-items: center;
+  }
+
+.flex-container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+#title{
+
+}
