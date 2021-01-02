@@ -21,6 +21,13 @@ a{
     margin: 10px;
     text-decoration: none;
 }
+
+#SiteName {
+    text-align: center;
+    color: #19456b;
+
+}
+
 #HomeButton a{
     font-size: 20px;
 }
@@ -41,6 +48,7 @@ nav{
     margin-top: 250px;
     margin-left: 100px;
     text-decoration: none;
+
     padding: 15px 10px;
 }
 header {
@@ -58,5 +66,5 @@ header {
     flex-wrap: wrap;
   }
 #title{
-
+    
 }
