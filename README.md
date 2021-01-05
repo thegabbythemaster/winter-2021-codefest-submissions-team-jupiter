@@ -2,10 +2,16 @@
 
 # Team Info
 ### Team name: Team Jupiter
+<<<<<<< HEAD
 ### Team members (format: GitHub username, last name, first name): 
 1. thegabbythemaster, Gonzalez, Gabriella
 2. kelsey-d, Damier, Kelsey
 3. BDDoylan, Mihov, Doylan
+=======
+### Team members (format: GitHub username, last name, first name): thegabbythemaster, Gonzalez, Gabriella
+kelsey-d, Damier, Kelsey
+BDDoylan, Mihov, Doylan
+>>>>>>> button-animation
 
 ### Group info (check all that apply - add an X in the [ ])
 - [ ] We are a Daedalus Google Mentorship group
