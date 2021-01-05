@@ -34,14 +34,27 @@ a{
 button{
     font-family: Arial;
     font-size: 30px;
-    color: #fcf8ec;
+    color: rgb(174, 215, 243);
     background: #19456b;
-    border-radius: 5px;
+    border-radius: 150px;
     padding: 10px;
     margin: 40px;
     min-width: 200px;
     text-decoration: none;
+    outline: 0;
+    box-shadow: 0 10px rgb(174, 215, 243);
+    border-color: #000000;
 }
+
+button:hover {
+    background-color: #4286c2;
+}
+
+button:active {
+    background-color: #4286c2;
+    box-shadow: 0 5px rgb(174, 215, 243);
+    transform: translateY(4px);
+  }
 
 #container{
     text-align: center;
