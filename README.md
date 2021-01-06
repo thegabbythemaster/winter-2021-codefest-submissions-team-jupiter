@@ -5,6 +5,7 @@
 ### Team members (format: GitHub username, last name, first name): 
 thegabbythemaster, Gonzalez, Gabriella
 kelsey-d, Damier, Kelsey
+BDDoylan, Mihov, Doylan
 
 ### Group info (check all that apply - add an X in the [ ])
 - [ ] We are a Daedalus Google Mentorship group
