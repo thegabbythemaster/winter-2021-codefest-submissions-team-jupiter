@@ -125,6 +125,7 @@ nav {
   padding: var(--navbar-padding);
 } 
 
+/*This is for the card animation*/
 .card
 {
     perspective: 1000px;
@@ -187,9 +188,8 @@ nav {
     padding: 10px;
     margin: 40px;
 }
+/*end of card animation*/
  
-
-   
 .flex-container {
   display: flex;
   justify-content: left;
