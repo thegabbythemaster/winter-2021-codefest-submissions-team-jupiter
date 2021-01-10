@@ -2,6 +2,7 @@
 <html>
     <head>
         <link href = "css/style.css" type = "text/css" rel = "stylesheet">
+        <script src="js/script.js" type="text/javascript"></script>
         <title>Suggestions</title>
     </head>
 
@@ -18,13 +19,62 @@
         <img src = "mountians.jpeg" class="bg">
             <h1 class= "title">Suggestion</h1>
 <!--Suggestion Buttons-->
-        <div class = "categories">
-            <button>MENTAL HEALTH</button>
-            <button>DIY</button>
-            <button>HOW-TO</button>
-            <br>
-            <button>PHYSICAL ACTIVITIES</button>
-            <button>OTHER</button>
+        <div class = "card">
+            <div class = "card_inner">
+                <button class = "card_front">
+                    Mental Health
+                </button>
+                <button class = "card_back">
+                    Example Suggestion
+                </button>
+            </div>
         </div>
+        <div class = "card">
+            <div class = "card_inner">
+                <button class = "card_front">
+                    DIY
+                </button>
+                <button class = "card_back">
+                    Example Suggestion
+                </button>
+            </div>
+        </div>
+        <div class = "card">
+            <div class = "card_inner">
+                <button class = "card_front">
+                    Physical Activity
+                </button>
+                <button class = "card_back">
+                    Example Suggestion
+                </button>
+            </div>
+        </div>
+        <div class = "card">
+            <div class = "card_inner">
+                <button class = "card_front">
+                    How-To
+                </button>
+                <button class = "card_back">
+                    Example Suggestion
+                </button>
+            </div>
+        </div>
+        <div class = "card">
+            <div class = "card_inner">
+                <button class = "card_front">
+                    Other
+                </button>
+                <button class = "card_back">
+                    Example Suggestion
+                </button>
+            </div>
+        </div>
+        <script>let cards = document.getElementsByClassName('card');
+            Array.from(cards).forEach((card) => {
+               card.addEventListener('click', () => {
+                card.classList.toggle('card--flipped');
+                console.log("Card clicked!");
+              });
+            });</script>           
     </body>
 </html>
