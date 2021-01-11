@@ -3,24 +3,15 @@
   margin: 0;
   padding: 0;
 }
-html {
+html, body {
   font-size: 22px;
-  /*    background: url(mountians.jpeg) no-repeat center center fixed; 
-    background-size: cover;*/
-}
-body {
+  height: 100%;
   font-family: Helvetica;
   font-size: 22px;
+  background-image: url('../media/mountains.jpeg');
+  background-size: cover;
 }
-img.bg {
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-}
+
 a {
   font-family: Arial;
   font-size: 16px;
@@ -31,18 +22,6 @@ a {
   margin: 10px;
   text-decoration: none;
 }
-
-/* button {
-  font-family: Arial;
-  color: #fcf8ec;
-  background: #19456b;
-  padding: 10px;
-  font-size: 30px;
-  text-decoration: none;
-  min-width: 200px;
-  margin: 40px;
-  border-radius: 8px;
-} */
 
 button {
   font-family: Arial;
@@ -70,52 +49,148 @@ button:active {
 }
 
 #SiteName {
-  text-align: center;
-  color: #19456b;
-}
-
-#site-name {
-  text-align: center;
   color: #19456b;
 }
 
 #HomeButton button {
   font-size: 20px;
+  z-index: 1;
 }
 
 #UserButton button {
   font-size: 20px;
   text-align: right;
 }
+#navbar {
+  overflow: hidden;
+  background-color: #d0e8f2;
+  padding: 22px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+#navbar a {
+  float: left;
+  color: #ddd;
+  text-align: center;
+  padding: 12px;
+  margin: 25px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#navbar a.active {
+  background-color: #19456b;
+  color: white;
+}
+#navbar-right {
+  float: right;
+  margin-left: auto;
+  display: inline;
+}
+
+
 nav {
   text-align: right;
   flex-grow: 1;
-  display: block;
-}
-
-.categories {
-  text-align: center;
-}
-
-header {
+  display: flex;
+  flex-wrap: nowrap;
   width: 100%;
+  height: 10%;
   position: fixed;
   z-index: 1;
-  height: 69px;
   background-color: #d0e8f2;
   align-items: center;
+  padding: var(--navbar-padding);
+} 
+
+.row .col {
+  text-align: center;
+  background: transparent;
+}
+/*This is for the card animation*/
+.card
+{
+    perspective: 1000px;
+    cursor: pointer;
+}
+.card--flipped .card_inner,
+.card--flipped .card_inner,
+.card--flipped .card_inner
+{
+    transform: rotateY(180deg);
+}
+.card,
+.card_inner
+{
+    position: relative;
+    width: 360px;
+    height: 120px;
 }
 
+.card_inner
+{
+    transition: transform .25s ease-in-out;
+    transform-origin: 50% 50%;
+
+    transform-style: preserve-3d;
+}
+
+.card_back
+{
+    transform: rotateY(180deg);
+}
+.card_front:hover{
+  background-color: #4286c2;
+}
+.card_front:active{
+    background-color: #4286c2;
+    box-shadow: 0 5px rgb(174, 215, 243);
+    transform: translateY(4px);
+  
+}
+.card_front,
+.card_back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    color: #888;
+    background: #19456b;
+    border-radius: 150px;
+    min-width: 250px;
+    min-height: 70px;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 10px rgb(174, 215, 243);
+    border-color: #000000;
+    padding: 10px;
+    margin: 40px;
+}
+/*end of card animation*/
+ 
 .flex-container {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
+
 }
 .title {
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  padding-top: 115px;
+  padding-top: 150px;
   padding-bottom: 20px;
   text-align: center;
 }
