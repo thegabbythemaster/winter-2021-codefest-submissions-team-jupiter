@@ -11,8 +11,10 @@
         <span id = "HomeButton"><a href = "#Home">Home</a></span>
         <h1 id="SiteName">NAME OF WEBPAGE</h1> <!--Instead of a home button the title can link back to the homepage?-->
         <nav>
-            <span><a href = "#UserProfile">Login</a></span>
-            <span><a href = "#UserProfile">Sign Up</a></span>
+            <div class="auth">
+                <button onclick="openLoginForm()">Login</button>
+                <button onclick="openSignupForm()">Sign Up</button>
+            </div>
         </nav>
   </header>
     <body>
@@ -26,10 +28,56 @@
             <button id="pick-suggestion">Need a Suggestion?</button>
         </div>
 
-        <!-- <div id="demo"><h2>Let AJAX change this text</h2></div> -->
-
-
+        <!-- Login/Signup Forms -->
+        <div class="popup-overlay"></div>
+        <div class="login-popup" id="login">
+          <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member login
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="login-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="login-password">
+            </div>
+            <div class="element">
+              <button>Login</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="signup-popup">
+          <div class="popup-close" onclick="closeSignupForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member Sign up
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="signup-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="signup-password">
+            </div>
+            <div class="element">
+              <label for="password">Confirm Password</label>
+              <input type="password" id="confirm-password">
+            </div>
+            <div class="element">
+              <button>Sign up</button>
+            </div>
+          </div>
+        </div>   
     </body>
 </html>
-
-<!-- on revisit: add page loading transitions -->
