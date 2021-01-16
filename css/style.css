@@ -363,3 +363,68 @@ body.showSignupForm .signup-popup {
   box-shadow: none;
   border-color: #000000;
 }
+
+/* daily challenge button */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+
+.challenge {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "Fugaz One", cursive;
+  display: none;
+}
+
+section.container {
+  min-width: 500px;
+  /* margin: 0% auto; */
+  text-align: center;
+}
+
+a:hover {
+  border-bottom: 1px solid #111;
+}
+
+.container button:hover {
+  cursor: pointer;
+}
+.container button {
+  background: transparent;
+  outline: none;
+  position: relative;
+  border: 2px solid #111;
+  padding: 15px 50px;
+  overflow: hidden;
+  top: 60px;
+}
+
+.container button:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.container button:before {
+  content: attr(data-hover);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+/*button div (button text before hover)*/
+.container button:hover div {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+.container button div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
+}

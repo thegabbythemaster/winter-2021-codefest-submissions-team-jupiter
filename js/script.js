@@ -6,16 +6,23 @@ $(document).ready(function () {
     });
 });
 
-function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-            document.getElementById("daily-challenge").innerHTML = xhttp.responseText;
-        }
-    };
-    xhttp.open("GET", "sample.txt", true);
-    xhttp.send();
-}
+// displays challenge after button is clicked
+$(document).ready(function () {
+    $("#challenge-button").click(function () {
+        $("#daily-challenge").animate({
+            height: 'toggle'
+        });
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("content").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "challenge.html", true);
+        xhttp.send();
+    });
+});
 
 function openLoginForm() {
     document.body.classList.add("showLoginForm");

@@ -19,10 +19,17 @@
   </header>
     <body>
         <img src="mountians.jpeg" class="bg">
-        <!-- can use PHP to display a challenge on screen load -->
-        <div class="challenge">
-            <h1 class="title" id="daily-challenge" onclick="loadDoc()">Click to see Daily Challenge</h1>
+
+        <section class="container">
+          <button data-hover="click me!" id="challenge-button">
+            <div>Daily Challenge</div>
+          </button>
+        </section>
+
+        <div id="daily-challenge" class="challenge">
+          <div id="content"></div>
         </div>
+
         <div class="options">
             <button id="make-suggestion">Make a Suggestion</button>
             <button id="pick-suggestion">Need a Suggestion?</button>
