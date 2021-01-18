@@ -11,15 +11,13 @@ html {
 body {
   font-family: Helvetica;
   font-size: 22px;
+  background-color: white;
 }
-img.bg {
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  z-index: -1;
+
+#about h1{
+  font-family: Arial;
+  color: white;
+  font-size: 35px;
 }
 
 a {
@@ -60,7 +58,7 @@ button:active {
 
 #SiteName {
   text-align: center;
-  color: #19456b;
+  color: rgb(174, 215, 243);
 }
 
 #site-name {
@@ -71,6 +69,7 @@ button:active {
 #HomeButton button {
   font-size: 20px;
   z-index: 1;
+  color: white;
 }
 
 #UserButton button {
@@ -79,8 +78,8 @@ button:active {
 }
 #navbar {
   overflow: hidden;
-  background-color: #d0e8f2;
-  padding: 22px 10px;
+  background-color: rgb(25, 69, 107);
+  padding: 5px;
   transition: 0.4s;
   position: fixed;
   width: 100%;
@@ -102,10 +101,7 @@ button:active {
   background-color: #ddd;
   color: black;
 }
-#navbar a.active {
-  background-color: #19456b;
-  color: white;
-}
+
 #navbar-right {
   float: right;
   margin-left: auto;
@@ -124,71 +120,6 @@ nav {
   align-items: center;
   padding: var(--navbar-padding);
 } 
-
-/*This is for the card animation*/
-.card
-{
-    perspective: 1000px;
-    cursor: pointer;
-}
-.card--flipped .card_inner,
-.card--flipped .card_inner,
-.card--flipped .card_inner
-{
-    transform: rotateY(180deg);
-}
-.card,
-.card_inner
-{
-    position: relative;
-    width: 360px;
-    height: 120px;
-}
-
-.card_inner
-{
-    transition: transform .25s ease-in-out;
-    transform-origin: 50% 50%;
-
-    transform-style: preserve-3d;
-}
-
-.card_back
-{
-    transform: rotateY(180deg);
-}
-.card_front:hover{
-  background-color: #4286c2;
-}
-.card_front:active{
-    background-color: #4286c2;
-    box-shadow: 0 5px rgb(174, 215, 243);
-    transform: translateY(4px);
-  
-}
-.card_front,
-.card_back
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    color: #888;
-    background: #19456b;
-    border-radius: 150px;
-    min-width: 250px;
-    min-height: 70px;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-    text-decoration: none;
-    outline: 0;
-    box-shadow: 0 10px rgb(174, 215, 243);
-    border-color: #000000;
-    padding: 10px;
-    margin: 40px;
-}
-/*end of card animation*/
  
 .flex-container {
   display: flex;
@@ -196,13 +127,41 @@ nav {
   flex-wrap: wrap;
 
 }
+.intro{
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 370px;
+  text-align: left;
+  background-color: rgb(0, 0, 0);
+}
 .title {
+  background-color: black;
+  color: white;
+  font-size: 45px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+#safety-rules{
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 20px;
+  padding-left: 500px;
   text-align: center;
+}
+.rules{
+  position: relative;
+  text-align: center;
+  float: right;
+  padding-right: 30px;
 }
 
 .options button {
@@ -217,4 +176,196 @@ nav {
   padding: 18px 15px;
   min-width: 200px;
   text-align: center;
+}
+#covid-img{
+  float: right;
+}
+ul {
+  text-align: left;
+  list-style-position: inside;
+}
+li{
+  padding-left: 50px;
+  padding-bottom: 10px;
+}
+#about-info{
+  font-size: 25px;
+  text-align: left;
+}
+p{
+  font-size: 20px;
+  padding-left: 90px;
+  padding-bottom: 5px;
+}
+
+lottie-player{
+  float: right;
+  padding-right: 50px;
+}
+.glitch {
+  color: rgb(223, 191, 191);
+  position: relative;
+  font-size: 50px;
+  animation: glitch 5s 5s infinite;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -5px 0 magenta;
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  background: white;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+}
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes noise-1 {
+  $steps: 30;
+  @for $i from 1 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+@keyframes noise-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+.scanlines {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) .5%,
+    transparent 1%
+  );
+
+  animation: fudge 7s ease-in-out alternate infinite;
+}
+
+
+@keyframes fudge {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 2%);
+  }
+}
+
+.glow {
+  text-shadow: 0 0 1000px rgb(223, 191, 191);
+  color: transparent;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes glitch-2 {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+
+
+.container {
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+h1 {
+  font-size: 100px;
+  transform: translateY(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+  z-index: 10;
+  opacity: 0;
+  position: relative;
+}
+
+h1::before {
+    content: '';
+    width: 0%;
+    height: 76px;
+    position: absolute;
+    bottom: -10px;
+    animation: 1s underline ease-in-out forwards 2s;
+    mix-blend-mode: screen;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    transform: scale(.5);
+    animation: .5s slideIn ease-in-out forwards, 1s skewBg ease-in-out;
+}
+
+@keyframes skewBg {
+  0% {
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes underline {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
