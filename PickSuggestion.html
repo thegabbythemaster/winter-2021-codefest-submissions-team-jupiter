@@ -8,15 +8,18 @@
 
 <!-- Header -->
 <nav id = "navbar">
-    <a class = "active" href = "./index.html">Home</a>
-    <h1 id="SiteName">NAME OF WEBPAGE</h1> <!--Instead of a home button the title can link back to the homepage?-->
-    <div id = "navbar-right">
-        <a href = "#UserProfile">Login</a>
-        <a href = "#UserSignUp">Sign Up</a>
+    <a class = "active" href = "./index.html">Sero</a>
+    <p style = "padding-right: 700px;"> </p>
+    <!--<img id = "sero-img" src = "sero.jpg">-->
+    <div>
+        <a id="pick-suggestion">Need a Suggestion?</a>
+        <div id = "navbar-right">
+            <a href = "#UserProfile">Login</a>
+            <a href = "#UserSignUp">Sign Up</a>
+        </div>
     </div>
 </nav>
     <body>
-        <img src = "mountians.jpeg" class="bg">
             <h1 class= "title">Suggestion</h1>
 <!--Suggestion Buttons-->
         <div class = "card">
@@ -68,13 +71,6 @@
                     Example Suggestion
                 </button>
             </div>
-        </div>
-        <script>let cards = document.getElementsByClassName('card');
-            Array.from(cards).forEach((card) => {
-               card.addEventListener('click', () => {
-                card.classList.toggle('card--flipped');
-                console.log("Card clicked!");
-              });
-            });</script>           
+        </div>         
     </body>
 </html>

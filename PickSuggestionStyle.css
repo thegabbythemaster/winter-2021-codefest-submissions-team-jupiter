@@ -21,15 +21,20 @@ img.bg {
   top: 0;
   z-index: -1;
 }
+/*nav bar */
 a {
-  font-family: Arial;
-  font-size: 16px;
-  color: #fcf8ec;
-  background: #19456b;
+  font-family: Helvetica;
+  font-size: 20px;
+  color:white;
+  background-color: #19456b;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
   text-decoration: none;
+}
+
+.changeColor {
+  background-color: black;
 }
 
 /* button {
