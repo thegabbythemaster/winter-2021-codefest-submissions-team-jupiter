@@ -1,8 +1,42 @@
-// jQuery to redirect home page to pick suggestion page
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+    apiKey: "AIzaSyA9KTDCDBU3l1mdsb8jyuXbnr8Q5xwD9bQ",
+    authDomain: "suggestion-app-fc99e.firebaseapp.com",
+    projectId: "suggestion-app-fc99e",
+    storageBucket: "suggestion-app-fc99e.appspot.com",
+    messagingSenderId: "702116035518",
+    appId: "1:702116035518:web:41a91e22d7789f6cd157ef",
+    measurementId: "G-2YXZDF7RVP"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+// jQuery to redirect home page to other pages
 $(document).ready(function () {
     $("#pick-suggestion").click(function () {
-        // alert("button clicked.");
         window.location.href = "PickSuggestion.html";
+    });
+
+    $("#make-suggestion").click(function () {
+        window.location.href = "make-suggestion.html";
+    });
+
+    $("#mental-health").click(function () {
+        window.location.href = "categories/mental-health.html";
+    });
+    $("#diy").click(function () {
+        window.location.href = "categories/diy.html";
+    });
+    $("#how-to").click(function () {
+        window.location.href = "categories/how-to.html";
+    });
+    $("#physical-activities").click(function () {
+        window.location.href = "categories/physical-activities.html";
+    });
+    $("#other").click(function () {
+        window.location.href = "categories/other.html";
     });
 });
 
@@ -24,6 +58,7 @@ $(document).ready(function () {
     });
 });
 
+//Login/Signup form popup control
 function openLoginForm() {
     document.body.classList.add("showLoginForm");
 }
@@ -49,3 +84,111 @@ window.onclick = function (event) {
         console.log("close modal");
     }
 }
+
+// Firebase: listen for submit 
+
+//Reference content collection
+let mhSuggestionInfo = firebase.database().ref("mental-health-suggestion");
+let diySuggestionInfo = firebase.database().ref("diy-suggestion");
+let htSuggestionInfo = firebase.database().ref("how-to-suggestion");
+let paSuggestionInfo = firebase.database().ref("physical-activity-suggestion");
+let otherSuggestionInfo = firebase.database().ref("other-suggestion");
+
+document.querySelector(".contact-form").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+
+    let dbMessage;
+
+    var mhMessage;
+    var diyMessage;
+    var htMessage;
+    var paMessage;
+    var otherMessage;
+    //check if mental health suggestion box is empty
+    if (!document.querySelector(".mh-suggestion")) {
+        mhMessage = "";
+        // console.log("mh value is null");
+    }
+    else {
+        mhMessage = document.querySelector(".mh-suggestion").value;
+        console.log(mhMessage);
+        dbMessage = mhMessage;
+        // saveInfo(dbMessage);
+        let mhSuggestion = mhSuggestionInfo.push();
+        mhSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".diy-suggestion")) {
+        diyMessage = "";
+    }
+    else {
+        diyMessage = document.querySelector(".diy-suggestion").value;
+        console.log(diyMessage);
+        dbMessage = diyMessage;
+        let diySuggestion = diySuggestionInfo.push();
+        diySuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    //check if how to suggestion box is empty
+    if (!document.querySelector(".ht-suggestion")) {
+        htMessage = "";
+        // console.log("ht value is null");
+    }
+    else {
+        htMessage = document.querySelector(".ht-suggestion").value;
+        console.log(htMessage);
+        dbMessage = htMessage;
+        // saveInfo(dbMessage);
+        let htSuggestion = htSuggestionInfo.push();
+        htSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".pa-suggestion")) {
+        paMessage = "";
+    }
+    else {
+        paMessage = document.querySelector(".pa-suggestion").value;
+        console.log(paMessage);
+        dbMessage = paMessage;
+        let paSuggestion = paSuggestionInfo.push();
+        paSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".other-suggestion")) {
+        otherMessage = "";
+    }
+    else {
+        otherMessage = document.querySelector(".other-suggestion").value;
+        console.log(otherMessage);
+        dbMessage = otherMessage;
+        let otherSuggestion = otherSuggestionInfo.push();
+        otherSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+}
+
+//Save info to firebase
+// function saveInfo(dbMessage) {
+//     let mhSuggestion = mhSuggestionInfo.push();
+
+//     mhSuggestion.set({
+//         suggestion: dbMessage
+//     });
+
+//     let htSuggestion = htSuggestionInfo.push();
+//     htSuggestion.set({
+//         suggestion: dbMessage
+//     });
+// }

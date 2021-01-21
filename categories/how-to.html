@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Make a Suggestion</title>
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <!-- Header -->
+    <header class = "flex-container">
+        <span id = "HomeButton"><a href = "../index.html">Home</a></span>
+        <h1 id="SiteName">NAME OF WEBPAGE</h1> <!--Instead of a home button the title can link back to the homepage?-->
+        <nav>
+        <span id = "UserButton"><a href = "#UserProfile">User_Name</a></span>
+        </nav>
+    </header>
+
+    <body>
+        <img src="../mountians.jpeg" class="bg">
+        <form class="contact-form">
+            <!-- <label for="">Name</label><br />
+            <input class="name" type="text" placeholder="name" /><br />
+            <label for="">Email</label><br />
+            <input class="email" type="email" placeholder="email" /><br /> -->
+            <label for="">How-To Suggestion</label><br />
+            <textarea
+              class="ht-suggestion"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="type here..."
+            ></textarea
+            ><br />
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+        <script src="../js/script.js" type="text/javascript"></script>
+    </body>
+</html>
