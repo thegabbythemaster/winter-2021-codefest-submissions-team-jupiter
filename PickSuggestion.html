@@ -2,44 +2,39 @@
 <html>
 <head>
     <link href = "css/PickSuggestionStyle.css" type = "text/css" rel = "stylesheet">
-    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
     <title>Suggestions</title>
 </head>
+<nav id = "navbar">
+    <a class = "active" href = "./index.html">Sero</a>
+    <div id = "navbar-right">
+        <a href="PickSuggestion.html" id="pick-suggestion">Need a Suggestion?</a>
+            <a href = "#UserProfile">Login</a>
+            <a href = "#UserSignUp">Sign Up</a>
+    </div>
+</nav>  
 <body>
     <div class="container">
-        <nav id = "navbar">
-            <a class = "active" href = "./index.html">Sero</a>
-            <p style = "padding-right: 700px;"> </p>
-            <!--<img id = "sero-img" src = "sero.jpg">-->
-            <div>
-                <a id="pick-suggestion">Need a Suggestion?</a>
-                <div id = "navbar-right">
-                    <a href = "#UserProfile">Login</a>
-                    <a href = "#UserSignUp">Sign Up</a>
-                </div>
-            </div>
-        </nav>  
     <h1 class= "title">Suggestion</h1>
-<!--Suggestion Buttons-->
-    <div id=mental-health>
+    <div id=mental-health> 
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('mH')">
                     Mental Health
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id="mH">
                     Example Suggestion
                 </button>
             </div>
-        </div>
+        </div>    
     </div> 
-    <div id=diy>
+      <div id=diy>
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('diy')">
                     DIY
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id = "d">
                     Example Suggestion
                 </button>
             </div>
@@ -48,10 +43,10 @@
     <div id=physical>
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('phys')">
                     Physical Activity
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id = "phys">
                     Example Suggestion
                 </button>
             </div>
@@ -60,10 +55,10 @@
     <div id=how-to>
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('h-t')">
                     How-To
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id = "h-t">
                     Example Suggestion
                 </button>
             </div>
@@ -72,27 +67,59 @@
     <div id=other>
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('oth')">
                     Other
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id = "oth">
                     Example Suggestion
                 </button>
             </div>
         </div>  
      </div>
-     <div id=random>
+     <div id=random >
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front">
+                <button class = "card_front" onclick="randomSuggestion('ran')">
                     Random
                 </button>
-                <button class = "card_back">
+                <button class = "card_back" id = "ran">
                     Example Suggestion
                 </button>
             </div>
         </div>  
      </div>
     </div>
+     <script>
+        let cards = document.getElementsByClassName('card');
+            Array.from(cards).forEach((card) => {
+               card.addEventListener('click', () => {
+                card.classList.toggle('card--flipped');
+                console.log("Card clicked!");
+              });
+            });
+
+        var mentalH = ["dont stress", "self-improve"];
+var dIY = ["face mask at home", "hand sanitizer at home"];
+var physical = ["10 push-ups", "20 sit-ups"];
+var how2 = ["how to make chicken teriyaki", "how to make chicken salad"];
+var otter = ["diet plan", "sleeping schedule"];
+var rand = ["show your family love", "show your pets love"];
+
+function randomSuggestion(id) {
+    if (id === "mH") {
+        document.getElementById("mH").textContent = mentalH[Math.floor(mentalH.length * Math.random())];
+    } else if (id === "diy") {
+        document.getElementById("d").textContent = dIY[Math.floor(dIY.length * Math.random())];
+    } else if (id === "phys") {
+        document.getElementById("phys").textContent = physical[Math.floor(physical.length * Math.random())];
+    } else if (id === "h-t") {
+        document.getElementById("h-t").textContent = how2[Math.floor(how2.length * Math.random())];
+    } else if (id === "oth") {
+        document.getElementById("oth").textContent = otter[Math.floor(otter.length * Math.random())];
+    } else if (id === "ran") {
+        document.getElementById("ran").textContent = rand[Math.floor(rand.length * Math.random())];
+    }
+}
+    </script>   
     </body>
 </html>
