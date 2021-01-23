@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+	font-family: 'Helvetica';
+  height: 100%;
+  font-size: 22px;
+}
+
+/*#HomeButton button {
+  font-size: 20px;
+  z-index: 1;
+  color: white;
+}
+
+#UserButton button {
+  font-size: 20px;
+  text-align: right;
+}
+#navbar {
+  overflow: hidden;
+  background-color: rgb(25, 69, 107);
+  padding: 5px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}*/
+#navbar a {
+  float: left;
+  color: #ddd;
+  text-align: center;
+  padding: 12px;
+  margin: 25px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar-right {
+  float: right;
+  margin-left: auto;
+  display: inline;  
+}
+
+nav {
+  text-align: right;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  height: 69px;
+  align-items: center;
+  background-color: #19456B;
+  padding: 5px;
+} 
+a {
+  font-family: Arial;
+  font-size: 16px;
+  color: #fcf8ec;
+  background: #19456b;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+a.visited {
+   text-decoration: none;
+}
+
+.container {
+  background-color: black;
+	display: grid;
+  position: relative;
+  padding: 100px 50px 0px;
+  height: 100%;
+/*  width: 100%;*/
+  grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+	"mental-health diy physical"
+	"how-to other random";
+	grid-gap: 0.5rem;
+}
+
+#mental-health {
+	grid-area: mental-health;
+}
+
+#mental-health .card_front:hover {
+  background-image: url('../media/mental-health.gif');
+  color: black;
+
+}
+
+#diy {
+  grid-area: diy;
+}
+#diy .card_front:hover {
+  background-image: url('../media/diy.gif');
+  background-size: 125%;
+  background-position: center;
+  color: black;
+}
+
+#physical {
+	grid-area: physical;
+
+}
+#physical .card_front:hover {
+  background-image: url('../media/physical.gif');
+  background-position: center;
+  color: black;
+}
+#how-to {
+	grid-area: how-to;
+}
+#how-to .card_front:hover {
+  background-image: url('../media/how-to.gif');
+  background-position: center;
+  color: black;
+}
+#other {
+	grid-area: other;
+}
+#other .card_front:hover {
+  background-image: url('../media/other.gif');
+  background-position: center;
+  color: black;
+}
+
+#random {
+	grid-area: random;
+
+}
+
+#random .card_front:hover {
+  background-image: url('../media/random.gif');
+  background-position: center;
+  color: black;
+}
+.card
+{
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+.card--flipped .card_inner,
+.card--flipped .card_inner,
+.card--flipped .card_inner
+{
+    transform: rotateY(180deg);
+}
+.card,
+.card_inner
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card_inner
+{
+    transition: transform .25s ease-in-out;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+}
+
+
+.card_back
+{
+    transform: rotateY(180deg);
+}
+
+.card_front,
+.card_back
+{
+    position: absolute;
+    display: flex;
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
+    min-height: 70px;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    text-decoration: none;
+    cursor: pointer;
+ /*   outline: 0;*/
+}
