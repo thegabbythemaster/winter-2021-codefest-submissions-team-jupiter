@@ -275,16 +275,6 @@ h1 {
   position: relative;
 }
 
-h1::before {
-    content: '';
-    width: 0%;
-    height: 76px;
-    position: absolute;
-    bottom: -10px;
-    animation: 1s underline ease-in-out forwards 2s;
-    mix-blend-mode: screen;
-}
-
 .overlay {
     position: absolute;
     width: 100%;
@@ -336,17 +326,7 @@ h1::before {
  height: 60px;
  margin: 0px 20px;
 }
-#start li:before{
- content: '';
- position: absolute;
- bottom: -10px;
- left: -1.5px;
- width: 100%;
- height: 10px;
- background: #2a2a2a;
- transform-origin: top;
- transform: skewX(-41deg);
-}
+
 #start li:after{
  content: '';
  position: absolute;
