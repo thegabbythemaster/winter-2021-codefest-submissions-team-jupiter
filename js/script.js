@@ -19,45 +19,47 @@ function loadDoc() {
     xhttp.open("GET", "sample.txt", true);
     xhttp.send();
 }
-<<<<<<< HEAD
-
-const appearOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -250px 0px"
-  };
-  
-  const appearOnScroll = new IntersectionObserver(function(
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("appear");
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  },
-  appearOptions);
-  
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-
-  sliders.forEach(slider => {
-    appearOnScroll.observe(slider);
-  });
-  
  
-=======
 //-------------------------------------------------------------------------------------------
 
-var mentalH = ["dont stress", "self-improve"];
-var dIY = ["face mask at home", "hand sanitizer at home"];
-var physical = ["10 push-ups", "20 sit-ups"];
-var how2 = ["how to make chicken teriyaki", "how to make chicken salad"];
-var otter = ["diet plan", "sleeping schedule"];
+var mentalH = ["dont stress", "self-improve", 
+"Meditate",
+"Listen to some music",
+"Compliment yourself today!",
+"Write down some daily affirmations",
+"Call a friend and say hi!",
+"Eat an apple!",
+"Drink 3 cups of water!! NOW!", 
+"Talk about your feelings with a friend", 
+"Take a 5 minutes silence break, just for you.", 
+"Accept who are you",
+"Start your day with a cup of coffee",
+"Work your strengths", 
+"Boost brainpower by treating yourself to a couple pieces of dark chocolate every few days",
+"Feeling anxious?  Take a trip down memory lane and do some coloring",
+"Take time to laugh", 
+"Dance around while you do your housework.",
+"Relax in a warm bath",
+"Has something been bothering you? Let it all out…on paper.",
+"List down names of people who inspire you "
+];
+
+
+var dIY = ["face mask at home", 
+"hand sanitizer at home",
+
+];
+
+var physical = ["10 push-ups", "20 sit-ups","bike riding", 
+];
+
+
+var how2 = ["how to make chicken teriyaki", "how to make chicken salad",
+];
+var otter = ["diet plan", "sleeping schedule",
+
+];
+
 var rand = ["show your family love", "show your pets love"];
 
 function randomSuggestion(id) {
@@ -77,4 +79,3 @@ function randomSuggestion(id) {
 }
 
 //------------------------------------------------------------------------------------------
->>>>>>> kelsey
