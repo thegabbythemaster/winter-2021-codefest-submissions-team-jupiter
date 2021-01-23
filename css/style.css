@@ -1,14 +1,14 @@
-/*for the top border to get rid of white space on top*/
+
 * {
   margin: 0;
   padding: 0;
 }
 html {
-  font-size: 22px;
-  /*    background: url(mountians.jpeg) no-repeat center center fixed; 
-    background-size: cover;*/
+  font-size: 22px;  
 }
+
 body {
+  overflow-x: hidden;  
   font-family: Helvetica;
   font-size: 22px;
   background-color: white;
@@ -35,10 +35,41 @@ a {
   text-align: center;
   color: rgb(174, 215, 243);
 }
+#HomeButton button {
+  font-size: 20px;
+  z-index: 1;
+  color: white;
+}
 
-#site-name {
+#UserButton button {
+  font-size: 20px;
+  text-align: right;
+}
+#navbar {
+  overflow: hidden;
+  background-color: rgb(25, 69, 107);
+  padding: 5px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+#navbar a {
+  float: left;
+  color: #ddd;
   text-align: center;
-  color: #19456b;
+  padding: 12px;
+  margin: 25px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
 }
 
 #HomeButton button {
@@ -256,7 +287,6 @@ lottie-player{
   animation: fudge 7s ease-in-out alternate infinite;
 }
 
-
 @keyframes fudge {
   from {
     transform: translate(0px, 0px);
@@ -431,3 +461,104 @@ h1::before {
 #start li:nth-child(4):hover span{
  background: #FCEB00 !important;
 }
+
+
+
+.snip1295 {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin: 7px;
+  padding: 6px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  box-shadow: none !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+.snip1295 img {
+  max-width: 100%;
+  vertical-align: top;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.snip1295 .border {
+  position: absolute;
+  opacity: 0.45;
+}
+.snip1295 .border:before,
+.snip1295 .border:after,
+.snip1295 .border div:before,
+.snip1295 .border div:after {
+  background-color: #128cd3;
+  position: absolute;
+  content: "";
+  display: block;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.snip1295 .border:before,
+.snip1295 .border:after {
+  width: 0;
+  height: 1px;
+}
+.snip1295 .border div:before,
+.snip1295 .border div:after {
+  width: 1px;
+  height: 0;
+}
+.snip1295 .border.one {
+  left: 0;
+  top: 0;
+  right: 12px;
+  bottom: 12px;
+}
+.snip1295 .border.one:before,
+.snip1295 .border.one div:before {
+  left: 0;
+  top: 0;
+}
+.snip1295 .border.one:after,
+.snip1295 .border.one div:after {
+  bottom: 0;
+  right: 0;
+}
+.snip1295 .border.two {
+  left: 12px;
+  top: 12px;
+  right: 0;
+  bottom: 0;
+}
+.snip1295 .border.two:before,
+.snip1295 .border.two div:before {
+  right: 0;
+  top: 0;
+}
+.snip1295 .border.two:after,
+.snip1295 .border.two div:after {
+  bottom: 0;
+  left: 0;
+}
+.snip1295 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+.snip1295:hover .border:before,
+.snip1295.hover .border:before,
+.snip1295:hover .border:after,
+.snip1295.hover .border:after {
+  width: 100%;
+}
+.snip1295:hover .border div:before,
+.snip1295.hover .border div:before,
+.snip1295:hover .border div:after,
+.snip1295.hover .border div:after {
+  height: 100%;
+}
+
