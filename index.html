@@ -3,38 +3,80 @@
     <head>
         <title>Home</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- <script src="js/script.js" type="text/javascript"></script> -->
+        <script src="js/script.js" type="text/javascript"></script>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
     </head>
     <!--Nav Bar-->
-    <header class = "flex-container">
-        <span id = "HomeButton"><a href = "#Home">Home</a></span>
-        <h1 id="SiteName">NAME OF WEBPAGE</h1> <!--Instead of a home button the title can link back to the homepage?-->
-        <nav>
-            <div class="auth">
-                <button onclick="openLoginForm()">Login</button>
-                <button onclick="openSignupForm()">Sign Up</button>
+    <nav id = "navbar">
+        <a class = "active" href = "#Home">Sero</a>
+        <p style = "padding-right: 700px;"> </p>
+        <!--<img id = "sero-img" src = "sero.jpg">-->
+        <div>
+            <a id="pick-suggestion">Need a Suggestion?</a>
+            <div id = "navbar-right">
+                <!-- Login and Signup Buttons -->
+                <a onclick="openLoginForm()">Login</a>
+                <a onclick="openSignupForm()">Sign Up</a>
             </div>
-        </nav>
-  </header>
+        </div>
+    </nav>
     <body>
-        <img src="mountians.jpeg" class="bg">
+        <div class = "intro">
+            <!-- <div class="container projects">
+                <h1 class="title" id="daily-challenge" onclick="loadDoc()">Click to see Daily Challenge</h1>
+            </div> -->
+            <div id = "about-gif">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_T12D5w.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"  loop  autoplay></lottie-player>
+            </div>
+            <!-- <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1> -->
+            <!--<img id = "covid-img" src = "covidcell.jpg">-->
 
-        <section class="container">
-          <button data-hover="click me!" id="challenge-button">
-            <div>Daily Challenge</div>
-          </button>
-        </section>
-
-        <div id="daily-challenge" class="challenge">
-          <div id="content"></div>
+            <p >Welcome! This website is to help you have fun during quarentine</p>
+            <p>We know since quarentine, its been hard to find things to do.</p>
+            <p>Let alone, we cannot see our friends, so this website is to </p>
+            <p>help you find ideas on what to do, at the same time, being </p>
+            <p>safe.</p>
+            <ul id = "start"> 
+                <li>
+                  <a href = "PickSuggestion.html">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>Get Started</span>
+                  </a> 
+                </li>
+            </ul>
+            
+        </div> 
+        
+        <div class = "rules">
+            <ul>
+                <div class="glitch" data-text="COVID SAFETY RULES">COVID SAFETY RULES</div>
+                <div class="glow">COVID SAFETY RULES</div>
+                <br>
+                <br>
+                <br>
+                <li>Always wear a mask in public settings!</li>
+                <p>this will prevent you from breathing in the evil virus!</p>
+                <li>Wash your hands frequently!</li>
+                <li>Maintain six feet distance from others!</li>
+                <li>Carry handsanitizer with you when possible!</li>
+                <li>Stop using your hands for everything!</li>
+                <p>hip thrust that door!!</p> 
+                <li>Avoid crowded areas!</li>
+                <p>we don't like people!!</p>
+                <li>Avoid public transportation if possible!</li>
+            </ul>
+            <br>
+            <br>
+            <br>
         </div>
-
-        <div class="options">
-            <button id="make-suggestion">Make a Suggestion</button>
-            <button id="pick-suggestion">Need a Suggestion?</button>
-        </div>
-
         <!-- Login/Signup Forms -->
         <div class="popup-overlay"></div>
         <div class="login-popup" id="login">
@@ -85,8 +127,26 @@
               <button>Sign up</button>
             </div>
           </div>
-        </div>   
-        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
-        <script src="../js/script.js" type="text/javascript"></script>
+        </div>  
+        <!------------------------>
+        <div id = "photos">
+          <figure class="snip1295"><img src="media/Jake_Mask.jpeg" alt="sample67"/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+            <figure class="snip1295"><img src="media/Komal.jpeg" alt="sample68"/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+          </div>
     </body>
+    
 </html>
