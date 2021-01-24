@@ -48,7 +48,8 @@ html, body {
 #navbar-right {
   float: right;
   margin-left: auto;
-  display: inline;  
+  display: inline; 
+
 }
 
 nav {

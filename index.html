@@ -9,6 +9,7 @@
         <meta charset="UTF-8" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
+        
     </head>
     <!--Nav Bar-->
     <nav id = "navbar">
@@ -33,13 +34,13 @@
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_T12D5w.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"  loop  autoplay></lottie-player>
             </div>
-            <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1>
-            <!--<img id = "covid-img" src = "covidcell.jpg">-->
-            <p >Welcome! This website is to help you have fun during quarentine</p>
-            <p>We know since quarentine, its been hard to find things to do.</p>
-            <p>Let alone, we cannot see our friends, so this website is to </p>
-            <p>help you find ideas on what to do, at the same time, being </p>
-            <p>safe.</p>
+            <h1 id = "about" style = "padding-left: 85px;">Welcome!</h1>
+            <div class = "welcomeParagraph">
+              <p class = "lineSpacing">
+                Since staying at home had become the new normal, I’m sure it has been challenging to find activities to do which are fun as well as safe. Have no worries!! Sero is here to help! Explore the page for amusing suggestions and some safety precautions you should be taking. 
+              </p>
+            </div>
+            
             <ul id = "start"> 
                 <li>
                   <a href = "PickSuggestion.html">
@@ -47,7 +48,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span>Get Started</span>
+                    <span class = "getStarted">Get Started</span>
                   </a> 
                 </li>
             </ul>
@@ -59,16 +60,19 @@
                 <br>
                 <br>
                 <br>
-                <li>Always wear a mask in public settings!</li>
-                <p>this will prevent you from breathing in the evil virus!</p>
-                <li>Wash your hands frequently!</li>
-                <li>Maintain six feet distance from others!</li>
-                <li>Carry handsanitizer with you when possible!</li>
-                <li>Stop using your hands for everything!</li>
-                <p>hip thrust that door!!</p> 
-                <li>Avoid crowded areas!</li>
-                <p>we don't like people!!</p>
-                <li>Avoid public transportation if possible!</li>
+                <div class = "listofrules">
+                  <li>Always wear a mask in public settings!</li>
+                  <p>this will prevent you from breathing in the evil virus!</p>
+                  <li>Wash your hands frequently!</li>
+                  <li>Maintain six feet distance from others!</li>
+                  <li>Carry handsanitizer with you when possible!</li>
+                  <li>Stop using your hands for everything!</li>
+                  <p>hip thrust that door!!</p> 
+                  <li>Avoid crowded areas!</li>
+                  <p>we don't like people!!</p>
+                  <li>Avoid public transportation if possible!</li>
+                </div>
+               
             </ul>
             <br>
             <br>
@@ -76,26 +80,25 @@
         </div>
         <!-- <div id="demo"><h2>Let AJAX change this text</h2></div> -->
 
-
+        <div id = "photos">
+          <figure class="snip1295"><img src="media/Jake_Mask.jpeg" alt="sample67" width="500" height="500"/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+            <figure class="snip1295"><img src="media/Komal.jpeg" alt="sample68" width="500" height="500/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+          </div>
     </body>
-    <div id = "photos">
-    <figure class="snip1295"><img src="media/Jake_Mask.jpeg" alt="sample67"/>
-        <div class="border one">
-          <div></div>
-        </div>
-        <div class="border two">
-          <div></div>
-        </div>
-      </figure>
-      <figure class="snip1295"><img src="media/Komal.jpeg" alt="sample68"/>
-        <div class="border one">
-          <div></div>
-        </div>
-        <div class="border two">
-          <div></div>
-        </div>
-      </figure>
-    </div>
 </html>
 
 <!-- on revisit: add page loading transitions -->
