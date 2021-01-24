@@ -18,23 +18,24 @@
         <div>
             <a id="pick-suggestion">Need a Suggestion?</a>
             <div id = "navbar-right">
-                <a href = "#UserProfile">Login</a>
-                <a href = "#UserSignUp">Sign Up</a>
+                <!-- Login and Signup Buttons -->
+                <a onclick="openLoginForm()">Login</a>
+                <a onclick="openSignupForm()">Sign Up</a>
             </div>
         </div>
     </nav>
     <body>
-        <!-- can use PHP to display a challenge on screen load -->
         <div class = "intro">
-            <div class="container projects">
+            <!-- <div class="container projects">
                 <h1 class="title" id="daily-challenge" onclick="loadDoc()">Click to see Daily Challenge</h1>
-            </div>
+            </div> -->
             <div id = "about-gif">
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_T12D5w.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"  loop  autoplay></lottie-player>
             </div>
-            <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1>
+            <!-- <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1> -->
             <!--<img id = "covid-img" src = "covidcell.jpg">-->
+
             <p >Welcome! This website is to help you have fun during quarentine</p>
             <p>We know since quarentine, its been hard to find things to do.</p>
             <p>Let alone, we cannot see our friends, so this website is to </p>
@@ -51,7 +52,9 @@
                   </a> 
                 </li>
             </ul>
+            
         </div> 
+        
         <div class = "rules">
             <ul>
                 <div class="glitch" data-text="COVID SAFETY RULES">COVID SAFETY RULES</div>
@@ -74,28 +77,76 @@
             <br>
             <br>
         </div>
-        <!-- <div id="demo"><h2>Let AJAX change this text</h2></div> -->
-
-
+        <!-- Login/Signup Forms -->
+        <div class="popup-overlay"></div>
+        <div class="login-popup" id="login">
+          <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member login
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="login-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="login-password">
+            </div>
+            <div class="element">
+              <button>Login</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="signup-popup">
+          <div class="popup-close" onclick="closeSignupForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member Sign up
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="signup-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="signup-password">
+            </div>
+            <div class="element">
+              <label for="password">Confirm Password</label>
+              <input type="password" id="confirm-password">
+            </div>
+            <div class="element">
+              <button>Sign up</button>
+            </div>
+          </div>
+        </div>  
+        <!------------------------>
+        <div id = "photos">
+          <figure class="snip1295"><img src="media/Jake_Mask.jpeg" alt="sample67"/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+            <figure class="snip1295"><img src="media/Komal.jpeg" alt="sample68"/>
+              <div class="border one">
+                <div></div>
+              </div>
+              <div class="border two">
+                <div></div>
+              </div>
+            </figure>
+          </div>
     </body>
-    <div id = "photos">
-    <figure class="snip1295"><img src="media/Jake_Mask.jpeg" alt="sample67"/>
-        <div class="border one">
-          <div></div>
-        </div>
-        <div class="border two">
-          <div></div>
-        </div>
-      </figure>
-      <figure class="snip1295"><img src="media/Komal.jpeg" alt="sample68"/>
-        <div class="border one">
-          <div></div>
-        </div>
-        <div class="border two">
-          <div></div>
-        </div>
-      </figure>
-    </div>
+    
 </html>
-
-<!-- on revisit: add page loading transitions -->
