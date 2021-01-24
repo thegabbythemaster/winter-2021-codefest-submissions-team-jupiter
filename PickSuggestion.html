@@ -191,7 +191,7 @@
         "Play Mario 64! ",
         "Buy a new video game that you never heard of!" ];
             
-        var rand = ["show your family love", "show your pets love"];
+        var rand = [mentalH, dIY, physical, how2, otter];
 
         function randomSuggestion(id) {
             if (id === "mH") {
@@ -205,7 +205,8 @@
             } else if (id === "oth") {
                 document.getElementById("oth").textContent = otter[Math.floor(otter.length * Math.random())];
             } else if (id === "ran") {
-                document.getElementById("ran").textContent = rand[Math.floor(rand.length * Math.random())];
+                var r = rand[Math.floor(rand.length * Math.random())];
+                document.getElementById("ran").textContent = r[Math.floor(r.length * Math.random())];
             }
 }
     </script>   
