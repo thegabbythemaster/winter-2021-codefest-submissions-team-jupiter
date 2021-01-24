@@ -7,47 +7,50 @@ $(document).ready(function () {
         // alert("button clicked.");
         window.location.href = "PickSuggestion.html";
     });
-});
-
-function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-            document.getElementById("daily-challenge").innerHTML = xhttp.responseText;
-        }
-    };
-    xhttp.open("GET", "sample.txt", true);
-    xhttp.send();
-}
-
-//-------------------------------------------------------------------------------------------
-
-// jQuery to redirect home page to other pages
-$(document).ready(function () {
-    $("#pick-suggestion").click(function () {
-        window.location.href = "PickSuggestion.html";
-    });
 
     $("#make-suggestion").click(function () {
         window.location.href = "make-suggestion.html";
+        // alert("clicks");
     });
 
-    $("#mental-health").click(function () {
+    $("#mh-button").click(function () {
         window.location.href = "categories/mental-health.html";
+        // alert("button clicked.");
     });
-    $("#diy").click(function () {
+    $("#diy-button").click(function () {
         window.location.href = "categories/diy.html";
     });
-    $("#how-to").click(function () {
+    $("#ht-button").click(function () {
         window.location.href = "categories/how-to.html";
     });
-    $("#physical-activities").click(function () {
+    $("#phys-button").click(function () {
         window.location.href = "categories/physical-activities.html";
     });
-    $("#other").click(function () {
+    $("#oth-button").click(function () {
         window.location.href = "categories/other.html";
     });
 });
+
+// displays challenge after button is clicked
+$(document).ready(function () {
+    $("#challenge-button").click(function () {
+        $("#daily-challenge").animate({
+            height: 'toggle'
+        });
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("content").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "challenge.html", true);
+        xhttp.send();
+    });
+});
+
+
+//-------------------------------------------------------------------------------------------
 
 //Login/Signup form popup control
 function openLoginForm() {

@@ -26,14 +26,22 @@
     </nav>
     <body>
         <div class = "intro">
-            <!-- <div class="container projects">
-                <h1 class="title" id="daily-challenge" onclick="loadDoc()">Click to see Daily Challenge</h1>
-            </div> -->
+          <!-- daily challenge button -->
+          <section class="container">
+            <button data-hover="click me!" id="challenge-button">
+              <div>Daily Challenge</div>
+            </button>
+          </section>
+  
+          <div id="daily-challenge" class="challenge">
+            <div id="content"></div>
+          </div>
             <div id = "about-gif">
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_T12D5w.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"  loop  autoplay></lottie-player>
             </div>
-            <!-- <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1> -->
+            
+            <h1 id = "about" style = "padding-left: 85px;">ABOUT</h1>
             <!--<img id = "covid-img" src = "covidcell.jpg">-->
 
             <p >Welcome! This website is to help you have fun during quarentine</p>

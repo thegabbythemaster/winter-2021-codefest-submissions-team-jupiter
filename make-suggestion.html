@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href = "css/PickSuggestionStyle.css" type = "text/css" rel = "stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <title>Suggestions</title>
 </head>
@@ -78,192 +79,62 @@
     ">Select a Category</h1>
 
     <div class="container">
-    <div id=mental-health> 
+    <div id= mental-health> 
         
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" onclick="randomSuggestion('mH')">
+                <button class = "card_front" id="mh-button">
                     Mental Health
-                </button>
-                <button class = "card_back" id="mH">
-                    Example Suggestion
                 </button>
             </div>
         </div>    
     </div> 
-      <div id=diy>
+      <div id="diy">
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" onclick="randomSuggestion('diy')">
+                <button class = "card_front" id = "diy-button">
                     DIY
                 </button>
-                <button class = "card_back" id = "d">
-                    Example Suggestion
-                </button>
             </div>
         </div>
     </div>
-    <div id=physical>
+    <div id="physical">
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" onclick="randomSuggestion('phys')">
+                <button class = "card_front" id = "phys-button">
                     Physical Activity
                 </button>
-                <button class = "card_back" id = "phys">
-                    Example Suggestion
-                </button>
             </div>
         </div>
     </div>
-    <div id=how-to>
+    <div id="how-to">
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" id = "h-t" onclick="randomSuggestion('h-t')">
+                <button class = "card_front" id = "ht-button">
                     How-To
                 </button>
             </div>
         </div>
     </div>
-    <div id=other>
+    <div id="other">
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" id = "oth" onclick="randomSuggestion('oth')">
+                <button class = "card_front" id = "oth-button">
                     Other
                 </button>
             </div>
         </div>  
      </div>
-     <div id=random >
+     <div id="random">
         <div class = "card">
             <div class = "card_inner">
-                <button class = "card_front" id = "ran" onclick="randomSuggestion('ran')">
+                <button class = "card_front" id = "ran">
                     Random
                 </button>
             </div>
         </div>  
      </div>
     </div>
-     <!-- <script>
-        let cards = document.getElementsByClassName('card');
-            Array.from(cards).forEach((card) => {
-               card.addEventListener('click', () => {
-                card.classList.toggle('card--flipped');
-                console.log("Card clicked!");
-              });
-            });
-
-        var mentalH = ["dont stress", "self-improve", "Listen to some music",
-        "Compliment yourself today!",
-        "Write down some daily affirmations",
-        "Call a friend and say hi!",
-        "Eat an apple!",
-        "Drink 3 cups of water!! NOW!", 
-        "Talk about your feelings with a friend", 
-        "Take a 5 minutes silence break, just for you.", 
-        "Accept who are you",
-        "Start your day with a cup of coffee",
-        "Work your strengths", 
-        "Boost brainpower by treating yourself to a couple pieces of dark chocolate every few days",
-        "Feeling anxious?  Take a trip down memory lane and do some coloring",
-        "Take time to laugh", 
-        "Dance around while you do your housework.",
-        "Relax in a warm bath",
-        "Has something been bothering you? Let it all out…on paper.",
-        "List down names of people who inspire you "];
-
-        var dIY = ["face mask at home", "hand sanitizer at home", "diamond art",
-        "knitting/crocheting",
-        "painting",
-        "Make a bird house with the stuff in your backyard",
-        "Try to make a sculpture with trash!",
-        "Make a puzzle! Draw a picture and cut it into pieces and put it back together!", 
-        "Make a doll with pipe cleaners", 
-        "Make your own hand-painted wallpaper.",
-        "Create your own DIY coffee station",
-        "Create a custom mirror!", 
-        "Paint your night stand",
-        "Build some bookshelves ",
-        "Paint some empty tissue boxes !",
-        "Make yourself a necklace!", 
-        "Make yourself a pair of earrings!",
-        "Create a vision board for the year",
-        "Try adult coloring books",
-        "Make a paper crane!!"];
-
-        var physical = ["10 push-ups", "20 sit-ups", "running", 
-        "just dance", 
-        "Walk for an hour",
-        "Try to jump rope without messing up!",
-        "Hula hope challenge! Try to hula hoop for 5 minutes straight",
-        "Do some yoga",
-        "Swim for an hour",
-        "Try to free style swim!", 
-        "Try to doggy paddle for 5 minutes straight!", 
-        "Play fetch with your dog!",
-        "Play catch with your family",
-        "Play bean toss with your family"];
-
-        var how2 = ["how to make chicken teriyaki", "how to make chicken salad", "Learn how to play the piano",
-        "Learn how to play the ukulele!",
-        "Learn how to play the drums!", 
-        "Learn how to play the recorder!",
-        "Learn how to draw!", 
-        "Learn how to do origami", 
-        "Learn how to bake cookies", 
-        "Learn how to make tomato soup", 
-        "Learn how to play the triangle",
-        "Learn how to dance to blackpink", 
-        "Learn how to dance to BTS", 
-        "Learn the how to do a trending dance!", 
-        "Learn how to socialize",
-        "Learn how taxes work ",
-        "Learn how mortgage work", 
-        "Learn how to help the environment!", 
-        "Learn how to drive!!"];
-
-        var otter = ["diet plan", "sleeping schedule", "Lay in the sun", 
-        "Count how many tiles you have on your floor", 
-        "Re-watch your favorite movie", 
-        "Edit old photos", 
-        "Sing!",
-        "Work on your budget and personal finances",
-        "Play bingo with your family",  
-        "Try to find the biggest stick out of your family",
-        "Put some socks on and glide on your kitchen floor!!",
-        "Monopoly anyone?", 
-        "Uno!!", 
-        "Play some checkers!", 
-        "Play connect four!", 
-        "Play mancala!", 
-        "Play among us…. You sus.", 
-        "Club penguin here! https://cprewritten.net/",
-        "Play Fall guys on PC or PS4!", 
-        "Play some animal crossing on the switch!", 
-        "Play Mario kart on the switch!", 
-        "Play Smash bros on switch!", 
-        "Play the legend of Zelda on the switch!", 
-        "Play Mario 64! ",
-        "Buy a new video game that you never heard of!" ];
-            
-        var rand = [mentalH, dIY, physical, how2, otter];
-
-        function randomSuggestion(id) {
-            if (id === "mH") {
-                document.getElementById("mH").textContent = mentalH[Math.floor(mentalH.length * Math.random())];
-            } else if (id === "diy") {
-                document.getElementById("d").textContent = dIY[Math.floor(dIY.length * Math.random())];
-            } else if (id === "phys") {
-                document.getElementById("phys").textContent = physical[Math.floor(physical.length * Math.random())];
-            } else if (id === "h-t") {
-                document.getElementById("h-t").textContent = how2[Math.floor(how2.length * Math.random())];
-            } else if (id === "oth") {
-                document.getElementById("oth").textContent = otter[Math.floor(otter.length * Math.random())];
-            } else if (id === "ran") {
-                var r = rand[Math.floor(rand.length * Math.random())];
-                document.getElementById("ran").textContent = r[Math.floor(r.length * Math.random())];
-            }
-}
-    </script>    -->
         <script src="js/script.js" type="text/javascript"></script>
     </body>
 </html>
