@@ -3,34 +3,91 @@
     <head>
         <title>Make a Suggestion</title>
         <link href="../css/style.css" type="text/css" rel="stylesheet">
+        <link href="../css/forms.css" type="text/css" rel="stylesheet">
+        <link href = "../css/PickSuggestionStyle.css" type = "text/css" rel = "stylesheet">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <!-- Header -->
-    <header class = "flex-container">
-        <span id = "HomeButton"><a href = "../index.html">Home</a></span>
-        <h1 id="SiteName">NAME OF WEBPAGE</h1> <!--Instead of a home button the title can link back to the homepage?-->
-        <nav>
-        <span id = "UserButton"><a href = "#UserProfile">User_Name</a></span>
-        </nav>
-    </header>
+    <!--Nav Bar-->
+    <nav id = "navbar">
+        <a class = "active" href = "../index.html">Sero</a>
+        <p style = "padding-right: 700px;"> </p>
+        <!--<img id = "sero-img" src = "sero.jpg">-->
+        <div>
+            <div id = "navbar-right">
+                <!-- Login and Signup Buttons -->
+                <a onclick="openLoginForm()">Login</a>
+                <a onclick="openSignupForm()">Sign Up</a>
+            </div>
+        </div>
+    </nav>
 
     <body>
+        <!-- Login/Signup Forms -->
+        <div class="popup-overlay" onclick="closeLoginForm(); closeSignupForm()"></div>
+        <div class="login-popup" id="login">
+          <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member login
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="login-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="login-password">
+            </div>
+            <div class="element">
+              <button>Login</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="signup-popup">
+          <div class="popup-close" onclick="closeSignupForm()">&times;</div>
+          <div class="form">
+            <div class="avatar">
+              <img src="https://bit.ly/31pHqJb" alt="">
+            </div>
+            <div class="header">
+              Member Sign up
+            </div>
+            <div class="element">
+              <label for="username">Username</label>
+              <input type="text" id="signup-username">
+            </div>
+            <div class="element">
+              <label for="password">Password</label>
+              <input type="password" id="signup-password">
+            </div>
+            <div class="element">
+              <label for="password">Confirm Password</label>
+              <input type="password" id="confirm-password">
+            </div>
+            <div class="element">
+              <button>Sign up</button>
+            </div>
+          </div>
+        </div>  
+        <!------------------------>
         <form class="contact-form">
-            <!-- <label for="">Name</label><br />
-            <input class="name" type="text" placeholder="name" /><br />
-            <label for="">Email</label><br />
-            <input class="email" type="email" placeholder="email" /><br /> -->
-            <label for="">Other Suggestion</label><br />
+            <label for="">Mental Health Suggestion</label>
+            <br/>
             <textarea
               class="other-suggestion"
               name=""
               id=""
-              cols="30"
+              cols="35"
               rows="10"
               placeholder="type here..."
             ></textarea
             ><br />
-            <button type="submit">Submit</button>
+            <button id="submit" type="submit" onclick="redirect()">Submit</button>
         </form>
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->

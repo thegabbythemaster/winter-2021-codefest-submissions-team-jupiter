@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href = "css/PickSuggestionStyle.css" type = "text/css" rel = "stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <title>Suggestions</title>
@@ -21,7 +22,7 @@
 </nav>  
 <body>
     <!-- Login/Signup Forms -->
-    <div class="popup-overlay"></div>
+    <div class="popup-overlay" onclick="closeLoginForm(); closeSignupForm()"></div>
     <div class="login-popup" id="login">
       <div class="popup-close" onclick="closeLoginForm()">&times;</div>
       <div class="form">
@@ -266,8 +267,9 @@
                 var r = rand[Math.floor(rand.length * Math.random())];
                 document.getElementById("ran").textContent = r[Math.floor(r.length * Math.random())];
             }
-}
+        }          
     </script>   
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
         <script src="js/script.js" type="text/javascript"></script>
     </body>
 </html>
