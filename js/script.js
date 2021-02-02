@@ -1,3 +1,19 @@
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+    apiKey: "AIzaSyA9KTDCDBU3l1mdsb8jyuXbnr8Q5xwD9bQ",
+    authDomain: "suggestion-app-fc99e.firebaseapp.com",
+    projectId: "suggestion-app-fc99e",
+    storageBucket: "suggestion-app-fc99e.appspot.com",
+    messagingSenderId: "702116035518",
+    appId: "1:702116035518:web:41a91e22d7789f6cd157ef",
+    measurementId: "G-2YXZDF7RVP"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 // jQuery to redirect home page to pick suggestion page
 const faders = document.querySelectorAll('.rules');
 const sliders = document.querySelectorAll(".slide-in");
@@ -29,6 +45,10 @@ $(document).ready(function () {
     $("#oth-button").click(function () {
         window.location.href = "categories/other.html";
     });
+    $("#submit").click(function () {
+        alert("Suggestion submitted!");
+        window.location.href = "../make-suggestion.html";
+    });
 });
 
 // displays challenge after button is clicked
@@ -58,7 +78,6 @@ function openLoginForm() {
 }
 function closeLoginForm() {
     document.body.classList.remove("showLoginForm");
-    console.log("close modal with x button");
 }
 
 function openSignupForm() {
@@ -68,13 +87,94 @@ function closeSignupForm() {
     document.body.classList.remove("showSignupForm");
 }
 
-// Get the modal
-var modal = document.getElementById("login");
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        document.body.classList.remove("showLoginForm");
-        console.log("close modal");
+//Reference content collection
+let mhSuggestionInfo = firebase.database().ref("mental-health-suggestion");
+let diySuggestionInfo = firebase.database().ref("diy-suggestion");
+let htSuggestionInfo = firebase.database().ref("how-to-suggestion");
+let paSuggestionInfo = firebase.database().ref("physical-activity-suggestion");
+let otherSuggestionInfo = firebase.database().ref("other-suggestion");
+
+document.querySelector(".contact-form").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+
+    let dbMessage;
+
+    var mhMessage;
+    var diyMessage;
+    var htMessage;
+    var paMessage;
+    var otherMessage;
+    //check if mental health suggestion box is empty
+    if (!document.querySelector(".mh-suggestion")) {
+        mhMessage = "";
+        // console.log("mh value is null");
+    }
+    else {
+        mhMessage = document.querySelector(".mh-suggestion").value;
+        console.log(mhMessage);
+        dbMessage = mhMessage;
+        // saveInfo(dbMessage);
+        let mhSuggestion = mhSuggestionInfo.push();
+        mhSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".diy-suggestion")) {
+        diyMessage = "";
+    }
+    else {
+        diyMessage = document.querySelector(".diy-suggestion").value;
+        console.log(diyMessage);
+        dbMessage = diyMessage;
+        let diySuggestion = diySuggestionInfo.push();
+        diySuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    //check if how to suggestion box is empty
+    if (!document.querySelector(".ht-suggestion")) {
+        htMessage = "";
+        // console.log("ht value is null");
+    }
+    else {
+        htMessage = document.querySelector(".ht-suggestion").value;
+        console.log(htMessage);
+        dbMessage = htMessage;
+        // saveInfo(dbMessage);
+        let htSuggestion = htSuggestionInfo.push();
+        htSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".pa-suggestion")) {
+        paMessage = "";
+    }
+    else {
+        paMessage = document.querySelector(".pa-suggestion").value;
+        console.log(paMessage);
+        dbMessage = paMessage;
+        let paSuggestion = paSuggestionInfo.push();
+        paSuggestion.set({
+            suggestion: dbMessage
+        });
+    }
+
+    if (!document.querySelector(".other-suggestion")) {
+        otherMessage = "";
+    }
+    else {
+        otherMessage = document.querySelector(".other-suggestion").value;
+        console.log(otherMessage);
+        dbMessage = otherMessage;
+        let otherSuggestion = otherSuggestionInfo.push();
+        otherSuggestion.set({
+            suggestion: dbMessage
+        });
     }
 }

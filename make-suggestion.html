@@ -3,25 +3,22 @@
 <head>
     <link href = "css/PickSuggestionStyle.css" type = "text/css" rel = "stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
     <title>Suggestions</title>
 </head>
-<nav id = "navbar">
+
+<body>
+  <nav id = "navbar">
     <a class = "active" href = "./index.html">Sero</a>
     <div id = "navbar-right">
         <!-- <a href="PickSuggestion.html" id="pick-suggestion">Need a Suggestion?</a> -->
         <a id="make-suggestion">Make a Suggestion</a>
         <a onclick="openLoginForm()">Login</a>
         <a onclick="openSignupForm()">Sign Up</a>
-        <!-- <div class="auth">
-            <a onclick="openLoginForm()">Login</a>
-            <a onclick="openSignupForm()">Sign Up</a>
-        </div> -->
     </div>
 </nav>  
-<body>
     <!-- Login/Signup Forms -->
-    <div class="popup-overlay"></div>
+    <div class="popup-overlay" onclick="closeLoginForm(); closeSignupForm()"></div>
     <div class="login-popup" id="login">
       <div class="popup-close" onclick="closeLoginForm()">&times;</div>
       <div class="form">
@@ -75,7 +72,7 @@
     <h1 style=
     "color: white;
     padding-top: 10%;
-    padding-left: 40%;
+    padding-left: 38%;
     ">Select a Category</h1>
 
     <div class="container">
@@ -135,6 +132,7 @@
         </div>  
      </div>
     </div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
         <script src="js/script.js" type="text/javascript"></script>
     </body>
 </html>

@@ -5,7 +5,6 @@
         <link href="css/style.css" type="text/css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/script.js" type="text/javascript"></script>
         <meta charset="UTF-8" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
@@ -25,6 +24,7 @@
             </div>
         </div>
     </nav>
+    
     <body>
         <div class = "intro">
           <!-- daily challenge button -->
@@ -88,7 +88,7 @@
             <br>
         </div>
         <!-- Login/Signup Forms -->
-        <div class="popup-overlay"></div>
+        <div class="popup-overlay" onclick="closeLoginForm(); closeSignupForm()"></div>
         <div class="login-popup" id="login">
           <div class="popup-close" onclick="closeLoginForm()">&times;</div>
           <div class="form">
@@ -157,6 +157,8 @@
               </div>
             </figure>
           </div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+        <script src="js/script.js" type="text/javascript"></script>
     </body>
     
 </html>
