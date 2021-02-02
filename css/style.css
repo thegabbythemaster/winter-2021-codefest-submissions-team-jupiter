@@ -170,6 +170,10 @@ nav {
   text-align: center;
 }
 
+.getStarted {
+  display: block;
+}
+
 #safety-rules {
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
