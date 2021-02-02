@@ -31,8 +31,17 @@ a {
 }
 
 #SiteName {
+  padding-top: 60px;
   text-align: center;
   color: rgb(174, 215, 243);
+}
+
+#Home{
+  font-size: 20px;
+  width: auto;
+  height: 20px;
+  z-index: 2;
+  margin-left: 300px;
 }
 #HomeButton button {
   font-size: 20px;
