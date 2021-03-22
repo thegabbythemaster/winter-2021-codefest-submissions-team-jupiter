@@ -12,6 +12,18 @@ gabbya8, Alexis, Gabriella
 - [ ] We are a Daedalus Google Mentorship group
 - [ ] We are a beginner group (only completed CSCI 12700)
 
+# Project Description
+
+
+
+Since the pandemic has started, many of our favorite activites are no longer safe. This is a website dedicated to suggest activites that are not only entertaining but also safe! 
+
+
+
+### Website Walkthrough GIF
+
+<img src="http://g.recordit.co/dxbXYw4L7L.gif"/>
+
 # General Info
 ## Theme: Create a Passion Project - Make something you've always wanted to build!
 Think of something you've always wanted to make and bring to life, and do it! To make it easier for our judges and to have some form of organization, all we ask is to try to keep it within one of these categories:
